@@ -3,7 +3,6 @@ import Image from 'next/image';
 import getRecentStories from '@/libs/getRecentStories';
 import { Stories } from '@prisma/client';
 import CarouselComponent from './CarouselComponent';
-import { Placeholder } from './StoryCard';
 
 const StoriesSwiper = async () => {
   const storiesData: Promise<Stories[]> = getRecentStories();

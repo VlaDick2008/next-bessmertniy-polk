@@ -24,6 +24,8 @@ const CreateStoryForm = () => {
 
   React.useEffect(() => {
     if (image) {
+      console.log('a');
+
       getBase64(image[0]).then((res) => setPrevImage(res as string));
     } else {
       return;
@@ -32,6 +34,7 @@ const CreateStoryForm = () => {
 
   const getBase64 = (file: File) =>
     new Promise((resolve, reject) => {
+      console.log('b');
       if (file === undefined) return;
       const reader = new FileReader();
       reader.readAsDataURL(file);
@@ -41,6 +44,7 @@ const CreateStoryForm = () => {
 
   const onSubmit = (data: FieldValues) => {
     setIsLoading(true);
+    console.log('c');
     if (data.photo[0]) {
       getBase64(data.photo[0])
         .then((res) => {

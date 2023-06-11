@@ -69,11 +69,23 @@ const StoryCard: React.FC<StoryCardProps> = ({ name, photo, subname, subsubname,
       <div className="border-2 w-full border-neutral-300 p-4 flex flex-col items-center rounded-lg hover:bg-gray-100 transition">
         {!photo ? (
           <div className="md:h-[270px] md:w-[179px] h-[180px] w-[131px] flex items-center relative mb-2">
-            <Image src="/placeholder.png" fill alt="person" className="rounded-lg object-cover" />
+            <Image
+              src="/placeholder.png"
+              fill
+              alt="person"
+              className="rounded-lg object-cover"
+              blurDataURL="/placeholder.png"
+            />
           </div>
         ) : (
           <div className="md:h-[270px] md:w-[179px] h-[180px] w-[131px] flex items-center relative mb-2">
-            <Image src={photo as string} fill alt="person" className="rounded-lg object-cover" />
+            <Image
+              src={photo as string}
+              fill
+              alt="person"
+              className="rounded-lg object-cover"
+              blurDataURL="/placeholder.png"
+            />
           </div>
         )}
         <div>

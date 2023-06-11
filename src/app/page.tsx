@@ -8,6 +8,8 @@ export default async function Home() {
   const storiesData: Promise<number> = getStoriesCount();
   const storiesCount = await storiesData;
 
+  if (!storiesData) return;
+
   return (
     <section className="flex flex-col items-center justify-between xl:p-0 p-4">
       <div className="lx:w-[600px] w-[300px]">
@@ -29,9 +31,8 @@ export default async function Home() {
         онлайн.
       </p>
       <p>
-        Материалы для размещения на сайте Бессмертного полка школы присылайте на электронную почту{' '}
-        <Link href={'mailto:school2-vzm@yandex.ru'}> school2-vzm@yandex.ru</Link>, указав в теме
-        письма &quot;Бессмертный полк&quot;.
+        Материалы для размещения на сайте Бессмертного полка школы вы можете отправить в секции
+        &quot;Рассказать историю&quot;
       </p>
     </section>
   );

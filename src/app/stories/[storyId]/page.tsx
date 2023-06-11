@@ -17,20 +17,15 @@ const Story = () => {
   const { storyId } = useParams();
 
   React.useEffect(() => {
-    try {
-      axios
-        .get(`/api/stories/${storyId}`)
-        .then((res) => {
-          setStory(res.data);
-          setIsLoading(false);
-        })
-        .catch((err) => {
-          toast.error('Не удалось загрузить запись');
-        });
-    } catch (err) {
-      toast.error('Не удалось загрузить запись');
-      setIsLoading(false);
-    }
+    axios
+      .get(`/api/stories/${storyId}`)
+      .then((res) => {
+        setStory(res.data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        toast.error('Не удалось загрузить запись');
+      });
   }, [storyId]);
 
   const formatedCreationDate = React.useMemo(() => {
